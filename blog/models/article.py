@@ -15,7 +15,7 @@ class ArticleModel(models.Model):
     slug = AutoSlugField(populate_from='body', unique=True)
     categories = models.ManyToManyField(CategoryModel, related_name='article')
     writer = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='articles')
+        'account.CustomUserModel', on_delete=models.CASCADE, related_name='articles')
 
     class Meta:
         db_table = 'article'
