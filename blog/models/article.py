@@ -4,14 +4,14 @@ from autoslug import AutoSlugField
 from blog.models import CategoryModel
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
+from blog.abstract_models import DateAbstractModel
 
 
-class ArticleModel(models.Model):
+class ArticleModel(DateAbstractModel):
     image = models.ImageField(upload_to='article_images')
     title = models.CharField(max_length=50)
     body = RichTextField()
-    created_time = models.DateTimeField(auto_now_add=True)
-    updated_time = models.DateTimeField(auto_now=True)
+
     slug = AutoSlugField(populate_from='body', unique=True)
     categories = models.ManyToManyField(CategoryModel, related_name='article')
     writer = models.ForeignKey(
