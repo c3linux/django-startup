@@ -5,6 +5,8 @@ from django.http import HttpResponse
 
 def contact(request):
     context = {
-        'name': 'Elmar'
+        'name': 'Elmar',
+        'number': 10,
+        'key': 'hey hello alright'
     }
     return render(request, 'pages/contact.html', context=context)

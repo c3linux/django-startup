@@ -5,4 +5,13 @@
 {% block content %}
 Contact
 
+{% if number > 5 %}
+number is over from 5
+
+{% else %}
+number is equal or under from 5
+{% endif %}
+
+{{ key|truncatechars:3 }}
+
 {% endblock %}
