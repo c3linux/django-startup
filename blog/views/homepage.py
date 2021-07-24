@@ -13,7 +13,7 @@ def homepage(request):
             Q(body__icontains=search)
         ).distinct()
     page = request.GET.get('page')
-    paginator = Paginator(articles, 1)
+    paginator = Paginator(articles, 3)
 
     return render(request, 'pages/home.html', context={
         'articles': paginator.get_page(page)

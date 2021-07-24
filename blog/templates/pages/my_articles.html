@@ -12,6 +12,7 @@
             <th scope="col">Title</th>
             <th scope="col">Updated Time</th>
             <th scope="col">x</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,9 @@
             <td>{{ article.title}}</td>
             <td>{{article.updated_time}}</td>
             <td>x</td>
+            <td> <a class='btn btn-primary' href="{% url 'update-article' updateArticleSlug=article.slug %}">Edit</a>
+                <a class='btn btn-danger' href="{% url 'delete-article' deleteArticleSlug=article.slug %}">Delete</a>
+            </td>
         </tr>
         {% endfor %}
     </tbody>

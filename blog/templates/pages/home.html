@@ -12,7 +12,13 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">{{ article.title}}</h5>
+                <h5 class="card-title">
+                    <a href="{% url 'article' articleSlug=article.slug%}">
+                        {{ article.title}}
+
+                    </a>
+
+                </h5>
                 <p class="card-text">{{article.body|safe|truncatechars_html:150}}</p>
                 <p class="card-text"><small class="text-muted">Since: {{article.updated_time|timesince}}</small>
                 </p>

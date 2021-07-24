@@ -12,7 +12,7 @@ class ArticleModel(DateAbstractModel):
     title = models.CharField(max_length=50)
     body = RichTextField()
 
-    slug = AutoSlugField(populate_from='body', unique=True)
+    slug = AutoSlugField(populate_from='title', unique=True)
     categories = models.ManyToManyField(CategoryModel, related_name='article')
     writer = models.ForeignKey(
         'account.CustomUserModel', on_delete=models.CASCADE, related_name='articles')
