@@ -15,7 +15,10 @@ SECRET_KEY = 'django-insecure-sgis&0zpvkk+jbvuahebqpcqwre0f4(5pi#c)ca1qu$56m0u-e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'd8189fabd706.ngrok.io',
+    '127.0.0.1'
+]
 
 
 # Application definition

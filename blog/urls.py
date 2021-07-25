@@ -1,7 +1,7 @@
 
 
 from django.urls import path
-from blog.views import contact, homepage, category, my_articles, article, add_article, update_article, delete_article
+from blog.views import contact, homepage, category, my_articles, article, add_article, update_article, delete_article, delete_comment
 
 urlpatterns = [
     path('', homepage, name='homepage'),
@@ -14,4 +14,6 @@ urlpatterns = [
          update_article, name='update-article'),
     path('delete-article/<slug:deleteArticleSlug>',
          delete_article, name='delete-article'),
+    path('delete-comment/<int:id>',
+         delete_comment, name='delete-comment'),
 ]
